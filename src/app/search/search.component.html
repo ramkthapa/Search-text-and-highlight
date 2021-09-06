@@ -1,0 +1,10 @@
+<div class="search-wrapper">
+  <div class="search-input">
+    <input [(ngModel)]="searchTerm" autocomplete="off" placeholder="Search...." />
+  </div>
+
+  <div *ngFor="let item of list | filter:searchTerm" class="group">
+      <b><span class="title" [innerHTML]="item.title | highlight:searchTerm"  mat-line></span></b>
+      <div class="content" [innerHTML]="item.content | highlight:searchTerm" mat-line></div>
+  </div>
+</div>
